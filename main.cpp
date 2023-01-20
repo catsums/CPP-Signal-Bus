@@ -7,8 +7,8 @@
 
 #include <functional>
 
-#include "ActionManager.h"
-#include "../myHelper.cpp"
+#include "ActionManager/ActionManager.h"
+#include "myHelper.cpp"
 
 using namespace std;
 
@@ -110,6 +110,8 @@ public:
 			//try to get requests
 			cout<<">>> Pushing requests"<<endl;
 			checkEnvironment();
+
+			step++;
 		}
 	}
 	void checkEnvironment(){
@@ -134,6 +136,7 @@ void managerTest()
 	manager.arr.push_back(new myContext("hake"));
 	manager.arr.push_back(new myContext("jellyfish"));
 
+	manager.mainLoop();
 }
 
 int main(){
